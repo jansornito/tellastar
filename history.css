@@ -1,0 +1,363 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #F7F1DE;
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #2a0a0a;
+}
+
+/* ── Navbar ─────────────────────────────────────────── */
+#navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #F7F1DE;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  display: block;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+}
+
+#navbar a {
+  display: block;
+  color: maroon;
+  text-align: center;
+  padding: 18px 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#navbar a:hover {
+  opacity: 0.7;
+}
+
+        /* ── History page styles ── */
+        .history-hero {
+            background-color: maroon;
+            color: #F7F1DE;
+            text-align: center;
+            padding: 60px 20px 50px;
+        }
+
+        .history-hero h1 {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 3rem;
+            letter-spacing: 0.06em;
+            margin-bottom: 12px;
+        }
+
+        .history-hero p.subtitle {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1rem;
+            opacity: 0.8;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .history-hero .divider {
+            width: 60px;
+            height: 3px;
+            background-color: #F7F1DE;
+            margin: 20px auto 0;
+            opacity: 0.5;
+        }
+
+        /* ── Overview block ── */
+        .history-overview {
+            max-width: 860px;
+            margin: 56px auto 0;
+            padding: 0 20px;
+        }
+
+        .history-overview p {
+            font-size: 1.08rem;
+            line-height: 1.9;
+            text-align: justify;
+            color: #2a0a0a;
+        }
+
+        /* ── Key aspects section ── */
+        .key-aspects {
+            max-width: 960px;
+            margin: 56px auto 0;
+            padding: 0 20px;
+        }
+
+        .key-aspects h2 {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 1.8rem;
+            color: maroon;
+            margin-bottom: 32px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid maroon;
+        }
+
+        /* ── Cards ── */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background-color: #F7F1DE;
+            border-radius: 12px;
+            padding: 28px 24px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            border-left: 5px solid maroon;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+        }
+
+        .card .card-year {
+            display: inline-block;
+            background-color: maroon;
+            color: #F7F1DE;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.75rem;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-bottom: 14px;
+        }
+
+        .card h3 {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 1.15rem;
+            color: maroon;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 0.97rem;
+            line-height: 1.75;
+            color: #3a1010;
+            text-align: justify;
+        }
+
+        .card p strong {
+            color: maroon;
+        }
+
+        /* ── Meaning highlight ── */
+        .meaning-block {
+            max-width: 860px;
+            margin: 48px auto 0;
+            padding: 0 20px;
+        }
+
+        .meaning-box {
+            background-color: maroon;
+            color: #F7F1DE;
+            border-radius: 16px;
+            padding: 36px 40px;
+            text-align: center;
+        }
+
+        .meaning-box h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            opacity: 0.75;
+            margin-bottom: 14px;
+        }
+
+        .meaning-box .word {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 3rem;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .meaning-box p {
+            font-size: 1rem;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        /* ── Closing note ── */
+        .closing-note {
+            max-width: 860px;
+            margin: 48px auto 0;
+            padding: 0 20px;
+        }
+
+        .closing-note p {
+            font-size: 1.05rem;
+            line-height: 1.85;
+            text-align: justify;
+            color: #2a0a0a;
+            font-style: italic;
+        }
+
+/* ── Footer ─────────────────────────────────────────── */
+#footer {
+  background-color: maroon;
+  color: #fff;
+  margin-top: 60px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 36px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* From Uiverse.io by ahmed150up2 */ 
+.ftrcard {
+  display: flex;
+  height: 70px;
+  width: 270px;
+}
+
+.ftrcard svg {
+  position: absolute;
+  display: flex;
+  width: 60%;
+  height: 100%;
+  font-size: 24px;
+  font-weight: 700;
+  opacity: 1;
+  transition: opacity 0.25s;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.ftrcard .social-link1,.ftrcard .social-link2,.ftrcard .social-link3,.ftrcard .social-link4 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  color: whitesmoke;
+  font-size: 24px;
+  text-decoration: none;
+  transition: 0.25s;
+  border-radius: 50px;
+}
+
+.ftrcard svg {
+  transform: scale(1);
+}
+
+.ftrcard .social-link1:hover {
+  background-color: #1a1e22;
+  animation: bounce_613 0.4s linear;
+}
+
+.ftrcard .social-link2:hover {
+  background: #f09433;
+  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  animation: bounce_613 0.4s linear;
+}
+
+.ftrcard .social-link3:hover {
+  background-color: #5865f2;
+  animation: bounce_613 0.4s linear;
+}
+
+.ftrcard .social-link4:hover {
+  background-color: #1d4292;
+  animation: bounce_613 0.4s linear;
+}
+
+@keyframes bounce_613 {
+  40% {
+    transform: scale(1.4);
+  }
+
+  60% {
+    transform: scale(0.8);
+  }
+
+  80% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.footer-links {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-links a {
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
+}
+
+.footer-links a:hover {
+  opacity: 0.7;
+}
+
+.footer-copy {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  opacity: 0.75;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+        
+        /* ── Responsive ── */
+        @media (max-width: 600px) {
+            .history-hero h1 { font-size: 2rem; }
+            .meaning-box .word { font-size: 2rem; }
+            .meaning-box { padding: 28px 24px; }
+        }

@@ -1,0 +1,477 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #F7F1DE;
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #2a0a0a;
+}
+
+/* ── Navbar ─────────────────────────────────────────── */
+#navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #F7F1DE;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  display: block;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+}
+
+#navbar a {
+  display: block;
+  color: maroon;
+  text-align: center;
+  padding: 18px 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#navbar a:hover {
+  opacity: 0.7;
+}
+
+.ttl {
+  display: flex;
+  justify-content: center;
+  padding: 32px 20px -50px;
+}
+
+.title-img {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  display: block;
+}
+
+.intro {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 20px;
+}
+
+.intro-image {
+  margin-bottom: 32px;
+}
+
+.c1 {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  display: block;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+}
+
+.intro-text {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.intro-text p {
+  text-align: justify;
+  line-height: 1.8;
+  margin-bottom: 18px;
+  font-size: 1.05rem;
+}
+
+.intro-text h4 {
+  text-align: center;
+  font-size: 1.2rem;
+  color: maroon;
+  margin-top: 28px;
+  font-style: italic;
+  letter-spacing: 0.03em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+        /* ══════════════════════════════════
+           CAROUSEL  —  pure HTML + CSS only
+           Uses hidden radio buttons to track
+           the active slide.
+        ══════════════════════════════════ */
+
+        .carousel-section {
+            max-width: 1100px;
+            margin: 50px auto 60px;
+            padding: 0 20px;
+        }
+
+        /* ── Hide all radio inputs ── */
+        .carousel input[type="radio"] {
+            display: none;
+        }
+
+        /* ── Outer wrapper clips everything ── */
+        .carousel {
+            position: relative;
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+        }
+
+        /* ── Slides track: all slides in a row ── */
+        .carousel-track {
+            display: flex;
+            width: 700%; /* 7 slides × 100% */
+            transition: transform 0.6s cubic-bezier(0.77, 0, 0.18, 1);
+        }
+
+        /* ── Each slide ── */
+        .slide {
+            width: calc(100% / 7);
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 520px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Caption overlay */
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(80, 0, 0, 0.75));
+            color: #F7F1DE;
+            padding: 40px 28px 22px;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 1.15rem;
+            letter-spacing: 0.02em;
+        }
+
+        .slide-caption span {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.75rem;
+            opacity: 0.75;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* ══ Slide positions via :checked ══ */
+        #s1:checked ~ .carousel-track { transform: translateX(0%); }
+        #s2:checked ~ .carousel-track { transform: translateX(calc(-100% / 7)); }
+        #s3:checked ~ .carousel-track { transform: translateX(calc(-200% / 7)); }
+        #s4:checked ~ .carousel-track { transform: translateX(calc(-300% / 7)); }
+        #s5:checked ~ .carousel-track { transform: translateX(calc(-400% / 7)); }
+        #s6:checked ~ .carousel-track { transform: translateX(calc(-500% / 7)); }
+        #s7:checked ~ .carousel-track { transform: translateX(calc(-600% / 7)); }
+
+        /* ── Prev / Next arrow labels ── */
+        .carousel-prev,
+        .carousel-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            width: 48px;
+            height: 48px;
+            background-color: rgba(100, 0, 0, 0.75);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            cursor: pointer;
+            user-select: none;
+            transition: background-color 0.2s ease;
+            text-decoration: none;
+        }
+
+        .carousel-prev:hover,
+        .carousel-next:hover {
+            background-color: #cc0000;
+        }
+
+        .carousel-prev { left: 14px; }
+        .carousel-next { right: 14px; }
+
+        /* ── Arrow targets per active slide ── */
+
+        /* PREV arrows (go back one) */
+        #s1:checked ~ .carousel-prev-group .prev-s1,
+        #s2:checked ~ .carousel-prev-group .prev-s2,
+        #s3:checked ~ .carousel-prev-group .prev-s3,
+        #s4:checked ~ .carousel-prev-group .prev-s4,
+        #s5:checked ~ .carousel-prev-group .prev-s5,
+        #s6:checked ~ .carousel-prev-group .prev-s6,
+        #s7:checked ~ .carousel-prev-group .prev-s7 { display: flex; }
+
+        /* NEXT arrows (go forward one) */
+        #s1:checked ~ .carousel-next-group .next-s1,
+        #s2:checked ~ .carousel-next-group .next-s2,
+        #s3:checked ~ .carousel-next-group .next-s3,
+        #s4:checked ~ .carousel-next-group .next-s4,
+        #s5:checked ~ .carousel-next-group .next-s5,
+        #s6:checked ~ .carousel-next-group .next-s6,
+        #s7:checked ~ .carousel-next-group .next-s7 { display: flex; }
+
+        .carousel-prev-group label,
+        .carousel-next-group label { display: none; }
+
+        .carousel-prev-group,
+        .carousel-next-group {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+
+        .carousel-prev-group { left: 14px; }
+        .carousel-next-group { right: 14px; }
+
+        .carousel-prev-group label,
+        .carousel-next-group label {
+            width: 48px;
+            height: 48px;
+            background-color: rgba(100, 0, 0, 0.75);
+            color: #fff;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            cursor: pointer;
+            user-select: none;
+            transition: background-color 0.2s ease;
+        }
+
+        .carousel-prev-group label:hover,
+        .carousel-next-group label:hover {
+            background-color: #cc0000;
+        }
+
+        /* ── Dot indicators ── */
+        .carousel-dots {
+            position: absolute;
+            bottom: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-dots label {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.45);
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            display: block;
+        }
+
+        .carousel-dots label:hover {
+            background-color: rgba(255,255,255,0.8);
+        }
+
+        /* Active dot */
+        #s1:checked ~ .carousel-dots .dot-1,
+        #s2:checked ~ .carousel-dots .dot-2,
+        #s3:checked ~ .carousel-dots .dot-3,
+        #s4:checked ~ .carousel-dots .dot-4,
+        #s5:checked ~ .carousel-dots .dot-5,
+        #s6:checked ~ .carousel-dots .dot-6,
+        #s7:checked ~ .carousel-dots .dot-7 {
+            background-color: #fff;
+            transform: scale(1.35);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 700px) {
+            .slide img { height: 260px; }
+            .slide-caption { font-size: 0.95rem; padding: 30px 16px 14px; }
+            .carousel-prev-group label,
+            .carousel-next-group label { width: 36px; height: 36px; font-size: 1rem; }
+        }
+
+/* ── Footer ─────────────────────────────────────────── */
+#footer {
+  background-color: maroon;
+  color: #fff;
+  margin-top: 60px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 36px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* From Uiverse.io by ahmed150up2 */ 
+.ftrcard {
+  display: flex;
+  height: 70px;
+  width: 270px;
+}
+
+.ftrcard svg {
+  position: absolute;
+  display: flex;
+  width: 60%;
+  height: 100%;
+  font-size: 24px;
+  font-weight: 700;
+  opacity: 1;
+  transition: opacity 0.25s;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.ftrcard .social-link1,.ftrcard .social-link2,.ftrcard .social-link3,.ftrcard .social-link4 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  color: whitesmoke;
+  font-size: 24px;
+  text-decoration: none;
+  transition: 0.25s;
+  border-radius: 50px;
+}
+
+.ftrcard svg {
+  transform: scale(1);
+}
+
+.ftrcard .social-link1:hover {
+  background-color: #1a1e22;
+  animation: bounce_613 0.4s linear;
+}
+
+.ftrcard .social-link2:hover {
+  background: #f09433;
+  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  animation: bounce_613 0.4s linear;
+}
+
+.ftrcard .social-link3:hover {
+  background-color: #5865f2;
+  animation: bounce_613 0.4s linear;
+}
+
+.ftrcard .social-link4:hover {
+  background-color: #1d4292;
+  animation: bounce_613 0.4s linear;
+}
+
+@keyframes bounce_613 {
+  40% {
+    transform: scale(1.4);
+  }
+
+  60% {
+    transform: scale(0.8);
+  }
+
+  80% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.footer-links {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-links a {
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
+}
+
+.footer-links a:hover {
+  opacity: 0.7;
+}
+
+.footer-copy {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  opacity: 0.75;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  .nav-inner {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  #navbar a {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+  }
+
+  .logo {
+    width: 140px;
+  }
+
+  .intro-text p {
+    font-size: 0.98rem;
+  }
+}
